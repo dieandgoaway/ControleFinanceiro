@@ -1,70 +1,48 @@
 
 import java.util.Date;
 
-public class Despesas {
-
-	private double valorDespesa;
-	private Date dataVencimento;
-	private String  descricaoDespesa;
-	private Boolean despesaParcelada;
-	private int parcelasRestantes;
-	private String classificacaoDespesa;
+public class Despesas extends OperadorFinanceiro{
 	
-	public Despesas(double v, String c, String desc, Boolean desp, int p, Date da) {
-		valorDespesa = v;
-		classificacaoDespesa = c;
-		descricaoDespesa = desc;
-		despesaParcelada = desp;
-		parcelasRestantes = p;
-		dataVencimento = da;
-	}
-
-	public double getValorDespesa() {
-		return valorDespesa;
-	}
-
-	public void setValorDespesa(double valorDespesa) {
-		this.valorDespesa = valorDespesa;
-	}
-
-	public Date getDataVencimento() {
-		return dataVencimento;
-	}
-
-	public void setDataVencimento(Date dataVencimento) {
+	private Date dataCadastro;
+	private Date dataVencimento;
+	private int parcelasRestantes;
+	private Boolean despesaParcelada;
+	
+	public Despesas(String nome, double valor, String descricao,Date dataCadastro, Boolean despesaParcelada, int parcelasRestantes, Date dataVencimento) {
+		super(nome,valor,descricao);
+		this.dataCadastro = dataCadastro;
 		this.dataVencimento = dataVencimento;
+		this.despesaParcelada = despesaParcelada;
+		this.parcelasRestantes = parcelasRestantes;
 	}
-
-	public String getDescricaoDespesa() {
-		return descricaoDespesa;
+	
+	
+	public Date getDataCadastro() {
+		return dataCadastro;
 	}
-
-	public void setDescricaoDespesa(String descricaoDespesa) {
-		this.descricaoDespesa = descricaoDespesa;
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
 	}
-
 	public Boolean getDespesaParcelada() {
 		return despesaParcelada;
 	}
-
 	public void setDespesaParcelada(Boolean despesaParcelada) {
 		this.despesaParcelada = despesaParcelada;
 	}
-
 	public int getParcelasRestantes() {
 		return parcelasRestantes;
 	}
-
 	public void setParcelasRestantes(int parcelasRestantes) {
 		this.parcelasRestantes = parcelasRestantes;
 	}
-
-	public String getClassificacaoDespesa() {
-		return classificacaoDespesa;
+	public Date getDataVencimento() {
+		return dataVencimento;
 	}
-
-	public void setClassificacaoDespesa(String classificacaoDespesa) {
-		this.classificacaoDespesa = classificacaoDespesa;
+	public void setDataVencimento(Date dataVencimento) {
+		this.dataVencimento = dataVencimento;
 	}
+	
+
+	
 
 }
