@@ -21,11 +21,22 @@ public class TipoDespesa {
 	public String getNomeTipo() {
 		return nomeTipo;
 	}
+	public int getContadorDespesas() {
+		return contadorDespesas;
+	}
+
+
+	public void setContadorDespesas(int contadorDespesas) {
+		this.contadorDespesas = contadorDespesas;
+	}
+
+
 	public void setNomeTipo(String nomeTipo) {
 		this.nomeTipo = nomeTipo;
 	}
-	public Despesas[] getDespesasTipo() {
-		return despesasTipo;
+	//Metodo getter modificado para ter como saida o nome da despesa de interesse
+	public String getDespesasTipo(int i) {
+		return despesasTipo[i].getNome();
 	}
 	public void setDespesasTipo(Despesas[] despesasTipo) {
 		this.despesasTipo = despesasTipo;
