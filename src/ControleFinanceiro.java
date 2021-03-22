@@ -1,8 +1,5 @@
 
 import java.util.Date;
-import java.util.*;
-import java.time.LocalDate;
-
 
 public class ControleFinanceiro {
 	
@@ -22,7 +19,7 @@ public class ControleFinanceiro {
 		
 		
 		//imprime o saldo
-        System.out.println("Saldo atual =  " + dinheiroEmEspecie.getValor()); 
+        System.out.println("Saldo inicial =  " + dinheiroEmEspecie.getValor()); 
         //aplica uma despesa como argumento no metodo modificarSaldo
         dinheiroEmEspecie.modificarSaldo(conta);
         //imprime
@@ -33,11 +30,11 @@ public class ControleFinanceiro {
         System.out.println("Saldo atual =  " + dinheiroEmEspecie.getValor()); 
         
         Despesas conta2 = new Despesas("Conta de agua", 163.24, 
-				"Conta de agua do mes de Março de 2021", hoje, true, 3, vencimento);
+				"Conta de agua do mes de Março de 2021", hoje, false, 0, hoje);
         Despesas conta3 = new Despesas("Conta de telefone", 165.24, 
-				"Conta de telefone do mes de Março de 2021", hoje, true, 3, vencimento);
-        Despesas conta4 = new Despesas("Conta de internet", 165.24, 
-				"Conta de internet do mes de Março de 2021", hoje, true, 3, vencimento);
+				"Conta de telefone do mes de Março de 2021", hoje, false, 0, hoje);
+        Despesas conta4 = new Despesas("Conta de internet", 125.24, 
+				"Conta de internet do mes de Março de 2021", hoje, true, 3, hoje);
         
         
         //cria um tipo para classificar contas
@@ -47,10 +44,14 @@ public class ControleFinanceiro {
         contasBoletos.adicionarDespesa(conta4);
         //testa os getters e contador da classe TipoDespesa
         System.out.println("Classificador de conta '" + contasBoletos.getNomeTipo() + 
-        		"' possui um total de " + contasBoletos.getContadorDespesas() + " despesas cadastradas");
+        		"' possui um total de " + contasBoletos.getContadorDespesas() + " despesas cadastradas:");
         
         for (int i = 0; i<contasBoletos.getContadorDespesas(); i++) {
-        	System.out.println(contasBoletos.getDespesasTipo(i));
+        	System.out.print(contasBoletos.getDespesasTipo(i));
+        	//print de virgula e espaco caso não seja o ultimo valor da lista de despesas
+        	if (i !=  contasBoletos.getContadorDespesas() - 1){
+        		System.out.print(", ");
+        	}else System.out.print(".");
         }
         
 
