@@ -7,7 +7,8 @@ public class Receitas extends OperadorFinanceiro{
 	private Date dataSalario;
 	
 	
-	public Receitas(String nome, double valor, String descricao, Boolean receitaSalario, Date dataSalario) {
+	public Receitas(String nome, double valor, String descricao,
+			Boolean receitaSalario, Date dataSalario) {
 		super(nome, valor, descricao);
 		this.receitaSalario = receitaSalario;
 		this.dataSalario = dataSalario;
