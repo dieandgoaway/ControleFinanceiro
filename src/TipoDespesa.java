@@ -8,10 +8,15 @@ public class TipoDespesa {
 	// Método Construtor da Classe.
 	public TipoDespesa(String nomeTipo, Despesas despesasTipo) {
 		this.nomeTipo = nomeTipo;
-		this.despesasTipo[contadorDespesas] = despesasTipo;
+		this.despesasTipo[0] = despesasTipo;
 		this.contadorDespesas++;
 	}
 	
+	
+	public void adicionarDespesa(Despesas despesasTipo) {
+		this.despesasTipo[contadorDespesas] = despesasTipo;
+		this.contadorDespesas++;
+	}
 	
 	public String getNomeTipo() {
 		return nomeTipo;

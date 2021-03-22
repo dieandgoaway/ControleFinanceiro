@@ -9,7 +9,7 @@ public class Despesas extends OperadorFinanceiro{
 	private Boolean despesaParcelada;
 	
 	public Despesas(String nome, double valor, String descricao,Date dataCadastro, Boolean despesaParcelada, int parcelasRestantes, Date dataVencimento) {
-		super(nome,valor,descricao);
+		super(nome, valor, descricao);
 		this.dataCadastro = dataCadastro;
 		this.dataVencimento = dataVencimento;
 		this.despesaParcelada = despesaParcelada;

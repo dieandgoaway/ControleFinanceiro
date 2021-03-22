@@ -2,12 +2,15 @@
 
 public abstract class OperadorFinanceiro {
 	
-	private String nome;
-	private double valor;
-	private String descricao;
+	protected String nome;
+	protected double valor;
+	protected String descricao;
 	
 	
-	
+	@Override
+	public String toString() {
+		return "[" + valor + "]";
+	}
 
 
 	public OperadorFinanceiro(String nome, double valor, String descricao) {
