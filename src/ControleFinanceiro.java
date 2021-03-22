@@ -14,6 +14,9 @@ public class ControleFinanceiro {
 		Receitas auxilioEmergencial = new Receitas("Auxilio Emergencial", 300,
 				"Dinheiro do Biroliro", true, salario);
 		
+		Receitas trabalhoFormal = new Receitas("Salário Mensal", 4000,
+				" ", true, salario);
+		
 		SaldoAcumulado dinheiroEmEspecie = new SaldoAcumulado("Dinheiro em Espécie",
 				202.00, "Dinheiro guardado dentro do colchão");
 		
@@ -51,10 +54,23 @@ public class ControleFinanceiro {
         	//print de virgula e espaco caso não seja o ultimo valor da lista de despesas
         	if (i !=  contasBoletos.getContadorDespesas() - 1){
         		System.out.print(", ");
-        	}else System.out.print(".");
+        	}else System.out.print(". \n");
         }
         
-
+        //Teste da classe ObjetivosFinanceiros instanciando o novo objetivo de um Corsa 2006
+        Date corsaData = new Date(2026,2,1);
+        ObjetivosFinanceiros corsinha2006 = new ObjetivosFinanceiros("Corsa 2006", 16500.00, 
+        		"Dinheiro para comprar meu corsinha amarelo", corsaData, dinheiroEmEspecie, false);
+        do {
+        	//adicionar o saldo até completar o objetivo
+            dinheiroEmEspecie.modificarSaldo(trabalhoFormal);
+        }while(dinheiroEmEspecie.getValor()<corsinha2006.getValor());
+        //setter do objetivo 
+        if (dinheiroEmEspecie.getValor()>corsinha2006.getValor()) {
+        	corsinha2006.setObjetivoConcluido(true);
+        	System.out.println("Objetivo "+ corsinha2006.getNome() + " concluído!");
+        }
+        
 	}
 
 }

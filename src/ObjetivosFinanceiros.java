@@ -2,6 +2,7 @@
 import java.util.Date;
 
 public class ObjetivosFinanceiros extends OperadorFinanceiro{
+	
 	private Date dataFinal;
 	private SaldoAcumulado contaObjetivo;
 	private Boolean objetivoConcluido;
@@ -15,6 +16,12 @@ public class ObjetivosFinanceiros extends OperadorFinanceiro{
 		this.objetivoConcluido = objetivoConcluido;
 	}
 	
+	//metodo ainda não implementado para estimar a conclusao
+	//com base no tempo restante até a data final.
+	public Date estimativaConclusao() {
+		Date hoje = new Date();
+		return hoje;
+	}
 	
 	public Date getDataFinal() {
 		return dataFinal;
