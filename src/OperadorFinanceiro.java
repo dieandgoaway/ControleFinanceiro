@@ -7,6 +7,7 @@ public abstract class OperadorFinanceiro {
 	protected String descricao;
 	
 	
+	//Sobreposição do método padrão toString
 	@Override
 	public String toString() {
 		return "[" + valor + "]";
